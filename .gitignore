@@ -1,6 +1,8 @@
 Makefile
 *.o
 *.a
+*.so
+*.so.[.0-9]*
 *.dylib
 .*.swp
 *.qm
