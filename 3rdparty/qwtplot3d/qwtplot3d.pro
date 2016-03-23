@@ -36,5 +36,5 @@ INCLUDEPATH += ../libpng/
 LIBS        += ../libpng/libpng.a
 
 # install
-target.path = lib
-INSTALLS += target
+#target.path = lib
+#INSTALLS += target

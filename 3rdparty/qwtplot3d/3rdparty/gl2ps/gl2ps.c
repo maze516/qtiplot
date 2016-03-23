@@ -47,6 +47,7 @@
 #endif
 
 #if defined(GL2PS_HAVE_LIBPNG)
+#include <zlib.h>
 #include <png.h>
 #endif
 

@@ -1,7 +1,9 @@
 TEMPLATE = subdirs
+CONFIG   += ordered
 
 SUBDIRS = fitPlugins \
-	    manual \
 	    3rdparty/qwt \
 		3rdparty/qwtplot3d \
-        qtiplot
+	 3rdparty/QTeXEngine \
+        qtiplot/importOPJ.pro \
+        qtiplot/qtiplot.pro

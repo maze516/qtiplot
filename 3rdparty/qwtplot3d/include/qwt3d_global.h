@@ -2,6 +2,7 @@
 #define QWT3D_GLOBAL_H
 
 #include <qglobal.h>
+#include <GL/glu.h>
 #if QT_VERSION < 0x040000
 #include <qmodules.h>
 #endif

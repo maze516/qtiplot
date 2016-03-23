@@ -2,6 +2,7 @@
 	File                 : ApplicationWindow.cpp
 	Project              : QtiPlot
 --------------------------------------------------------------------
+	Copyright � 2011 Stephan Zevenhuizen
 	Copyright            : (C) 2004 - 2011 by Ion Vasilief,
 						   (C) 2006 - June 2007 Tilman Hoener zu Siederdissen, Knut Franke
 	Email (use @ for *)  : ion_vasilief*yahoo.fr
@@ -174,7 +175,7 @@ using namespace std;
 #include <QVarLengthArray>
 #include <QList>
 #include <QUrl>
-#include <QAssistantClient>
+#include <qassistantclient.h>
 #include <QFontComboBox>
 #include <QSpinBox>
 #include <QMdiArea>
@@ -9830,7 +9831,7 @@ QMessageBox * ApplicationWindow::about(bool dialog)
 	if (dialog){
 		QString text = "<h2>"+ versionString() + "</h2>";
 		text +=	"<h3>" + QString(copyright_string).replace("\n", "<br>") + "</h3>";
-		text += "<h3>" + tr("Released") + ": " + QString(release_date) + "</h3>";
+		text += "<h3>" + QString("CMI - Universiteit Utrecht release") + "</h3>";
 
 		QMessageBox *mb = new QMessageBox();
 		mb->setAttribute(Qt::WA_DeleteOnClose);

@@ -1,4 +1,3 @@
-TARGET   = qtiplot
 QTI_ROOT = ..
 !include( $$QTI_ROOT/build.conf ) {
   message( "You need a build.conf file with local settings!" )
@@ -14,12 +13,16 @@ INCLUDEPATH       += $$MUPARSER_INCLUDEPATH
 INCLUDEPATH       += $$QWT_INCLUDEPATH
 INCLUDEPATH       += $$QWT3D_INCLUDEPATH
 INCLUDEPATH       += $$GSL_INCLUDEPATH
+INCLUDEPATH	  += /usr/include/QtAssistant/
+INCLUDEPATH	  += /usr/include/python2.7
+
 
 # configurable libs
 LIBS         += $$MUPARSER_LIBS
 LIBS         += $$QWT_LIBS
 LIBS         += $$QWT3D_LIBS
 LIBS         += $$GSL_LIBS
+LIBS	     += -lz -lGLU
 
 #############################################################################
 ###################### BASIC PROJECT PROPERTIES #############################
@@ -46,7 +49,7 @@ contains(CONFIG, CustomInstall){
 	unix:INSTALLS        += man
 
 	unix: INSTALLBASE = /usr
-	win32: INSTALLBASE = C:/QtiPlot
+	win32: INSTALLBASE = C:/qtiplot-0.9.8.9
 
 	unix: target.path = $$INSTALLBASE/bin
 	unix: translations.path = $$INSTALLBASE/share/qtiplot/translations
@@ -74,7 +77,6 @@ contains(CONFIG, StaticBuild){
 MOC_DIR        = ../tmp/qtiplot
 OBJECTS_DIR    = ../tmp/qtiplot
 SIP_DIR        = ../tmp/qtiplot
-DESTDIR        = ./
 
 #############################################################################
 ###################### PROJECT FILES SECTION ################################
@@ -159,7 +161,7 @@ contains(SCRIPTING_LANGS, Python) {
   				    qtiUtil.py \
   				    qti_wordlist.txt \
 
-  	unix: pythonconfig.path = /usr/local/qtiplot
+  	unix: pythonconfig.path = /usr/share/qtiplot
   	win32: pythonconfig.path = $$INSTALLBASE
   	DEFINES += PYTHON_CONFIG_PATH="\\\"$$replace(pythonconfig.path," ","\ ")\\\"
   }
@@ -232,3 +234,13 @@ contains(CONFIG, BrowserPlugin){
 	RC_FILE	= qtiplot.rc
 	include(../3rdparty/QtSolutions/qtbrowserplugin/src/qtbrowserplugin.pri)
 }
+
+###############################################################
+###############################################################
+###############################################################
+
+TARGET		=	qtiplot
+DESTDIR		=	.
+LIBS		+=	../tmp/qtiplot/libFreeSoftwareQtiPlotImportOPJ.a
+
+include(src/plugins/OriginPlugin/OriginPlugin.pri)
