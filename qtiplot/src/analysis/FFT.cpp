@@ -39,11 +39,11 @@
 #include <gsl/gsl_fft_complex.h>
 #include <gsl/gsl_fft_halfcomplex.h>
 
-FFT::FFT(ApplicationWindow *parent, Table *t, const QString& realColName, const QString& imagColName, int from, int to)
+FFT::FFT(ApplicationWindow *parent, Table *t, const QString& realColName, const QString& imagColName, int from, int to, bool foo)
 : Filter(parent, t)
 {
 	init();
-    setDataFromTable(t, realColName, imagColName, from, to);
+    setDataFromTable(t, realColName, imagColName, from, to, foo);
 }
 
 FFT::FFT(ApplicationWindow *parent, QwtPlotCurve *c)
@@ -353,7 +353,7 @@ void FFT::outputGraphs()
 	ml->arrangeLayers(false, false);
 }
 
-bool FFT::setDataFromTable(Table *t, const QString& realColName, const QString& imagColName, int from, int to)
+bool FFT::setDataFromTable(Table *t, const QString& realColName, const QString& imagColName, int from, int to, bool foo)
 {
 	d_init_err = true;
 
