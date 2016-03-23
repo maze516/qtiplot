@@ -36,7 +36,7 @@ class FFT : public Filter
 Q_OBJECT
 
 public:
-    FFT(ApplicationWindow *parent, Table *t, const QString& realColName, const QString& imagColName = QString(), int from = 1, int to = -1);
+    FFT(ApplicationWindow *parent, Table *t, const QString& realColName, const QString& imagColName = QString(), int from = 1, int to = -1, bool foo = false);
 	FFT(ApplicationWindow *parent, QwtPlotCurve *c);
 	FFT(ApplicationWindow *parent, QwtPlotCurve *c, double start, double end);
 	FFT(ApplicationWindow *parent, Graph *g, const QString& curveTitle);
@@ -52,6 +52,8 @@ public:
 	Matrix *realOutputMatrix(){return d_re_out_matrix;}
 	Matrix *imaginaryOutputMatrix(){return d_im_out_matrix;}
 
+    bool setDataFromTable(Table *t, const QString& realColName, const QString& imagColName = QString(), int from = 0, int to = -1, bool foo = false);
+
 private:
     void init();
     void output();
@@ -59,8 +61,6 @@ private:
 	void fftCurve();
 	void fftTable();
 	void fftMatrix();
-
-    bool setDataFromTable(Table *t, const QString& realColName, const QString& imagColName = QString(), int from = 0, int to = -1);
 
     double d_sampling;
     //! Flag telling if an inverse FFT must be performed.
