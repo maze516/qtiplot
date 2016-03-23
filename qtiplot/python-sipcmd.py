@@ -27,6 +27,7 @@
 #                                                                          #
 ############################################################################
 
-from PyQt4 import pyqtconfig
-config = pyqtconfig.Configuration()
-print " ".join([config.sip_bin, "-I", config.pyqt_sip_dir, config.pyqt_sip_flags])
+from PyQt4 import QtCore
+import sipconfig
+sipcfg = sipconfig.Configuration()
+print " ".join([sipcfg.sip_bin, "-I", sipcfg.default_sip_dir + "/PyQt4", QtCore.PYQT_CONFIGURATION['sip_flags']])
