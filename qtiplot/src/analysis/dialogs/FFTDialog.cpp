@@ -187,7 +187,7 @@ void FFTDialog::accept()
 			boxReal->setFocus();
 			return;
 		}
-        fft = new FFT(app, d_table, boxReal->currentText(), boxImaginary->currentText());
+        fft = new FFT(app, d_table, boxReal->currentText(), boxImaginary->currentText(), false);
 	}
     fft->setInverseFFT(backwardBtn->isChecked());
     fft->setSampling(boxSampling->value());
