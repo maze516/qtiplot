@@ -2,7 +2,7 @@
 ################# Module: Plot 3D #############################
 ###############################################################
 
-INCLUDEPATH += src/plot3D/
+INCLUDEPATH += $$PWD
 
 HEADERS  += src/plot3D/Bar.h \
             src/plot3D/ColorMapPreviewDialog.h\

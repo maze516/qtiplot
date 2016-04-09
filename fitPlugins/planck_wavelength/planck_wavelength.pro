@@ -6,19 +6,21 @@ QTI_ROOT = ../..
 QMAKE_PROJECT_DEPTH = 0
 linux-g++-64: libsuff=64
 
-TARGET = planck_wavelength
-TEMPLATE = lib
-CONFIG += dll
-CONFIG -= qt
-CONFIG += release
-DESTDIR = ../
+TARGET            = planck_wavelength
+TEMPLATE          = lib
 
-INSTALLS += target
- 
+
+CONFIG           += dll
+CONFIG           -= qt
+CONFIG           += release
+
+DESTDIR           = ../
+
 INCLUDEPATH += $$GSL_INCLUDEPATH
 LIBS        += $$GSL_LIBS
 
 target.path=/usr/lib$${libsuff}/qtiplot/plugins
+INSTALLS += target
 
 SOURCES = planck_wavelength.c
 

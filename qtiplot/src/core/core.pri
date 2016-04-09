@@ -1,5 +1,5 @@
 ###################### HEADERS ##############################################
-INCLUDEPATH += src/core/
+INCLUDEPATH += $$PWD
 
 HEADERS  += src/core/ApplicationWindow.h \
 			src/core/ConfigDialog.h \

@@ -1,10 +1,10 @@
 ###############################################################
 ################# Module: Matrix ##############################
 ###############################################################
+INCLUDEPATH += $$PWD
 
-INCLUDEPATH += src/matrix/
 
-HEADERS  += src/matrix/ColorMapDialog.h \
+HEADERS +=  src/matrix/ColorMapDialog.h \
             src/matrix/Matrix.h \
             src/matrix/MatrixCommand.h \
             src/matrix/MatrixDialog.h \

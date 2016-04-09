@@ -1,26 +1,28 @@
 ###############################################################
 ################# liborigin2 source files #####################
 ###############################################################
+INCLUDEPATH +=  $$PWD \
+                $$PWD/../tree.phi-sci.com \
 
-HEADERS += OriginObj.h
-HEADERS += OriginFile.h
-HEADERS += OriginParser.h
-HEADERS += Origin410Parser.h
-HEADERS += Origin500Parser.h
-HEADERS += Origin610Parser.h
-HEADERS += Origin700Parser.h
-HEADERS += Origin750Parser.h
-HEADERS += Origin800Parser.h
-HEADERS += Origin810Parser.h
-HEADERS += Origin850Parser.h
+HEADERS +=  OriginObj.h \
+            OriginFile.h \
+            OriginParser.h \
+            Origin410Parser.h \
+            Origin500Parser.h \
+            Origin610Parser.h \
+            Origin700Parser.h \
+            Origin750Parser.h \
+            Origin800Parser.h \
+            Origin810Parser.h \
+            Origin850Parser.h
 
-SOURCES += OriginFile.cpp
-SOURCES += OriginParser.cpp
-SOURCES += Origin410Parser.cpp
-SOURCES += Origin500Parser.cpp
-SOURCES += Origin610Parser.cpp
-SOURCES += Origin700Parser.cpp
-SOURCES += Origin750Parser.cpp
-SOURCES += Origin800Parser.cpp
-SOURCES += Origin810Parser.cpp
-SOURCES += Origin850Parser.cpp
+SOURCES +=  OriginFile.cpp \
+            OriginParser.cpp \
+            Origin410Parser.cpp \
+            Origin500Parser.cpp \
+            Origin610Parser.cpp \
+            Origin700Parser.cpp \
+            Origin750Parser.cpp \
+            Origin800Parser.cpp \
+            Origin810Parser.cpp \
+            Origin850Parser.cpp

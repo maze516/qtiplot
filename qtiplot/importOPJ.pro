@@ -8,8 +8,8 @@ INCLUDEPATH	+= $$QWT_INCLUDEPATH
 INCLUDEPATH += $$QWT3D_INCLUDEPATH
 INCLUDEPATH	+= $$GSL_INCLUDEPATH
 
+include(../3rdparty/qti/libqti.pri)
 include(src/core/core.pri)
-include(src/lib/libqti.pri)
 include(src/plot2D/plot2D.pri)
 include(src/plot3D/plot3D.pri)
 include(src/matrix/matrix.pri)

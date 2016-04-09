@@ -7,16 +7,17 @@ TEMPLATE          = lib
 VERSION      	  = 0.0.1
 
 CONFIG           += thread
-CONFIG           += warn_on 
+CONFIG           += warn_on
 CONFIG           += release
-CONFIG           += staticlib 
+CONFIG           += staticlib
 
 MOC_DIR           = ./tmp/
 OBJECTS_DIR       = ./tmp/
 DESTDIR           = ./
 
 INCLUDEPATH      += ./include/
-INCLUDEPATH      += ../../../3rdparty/qwt/src
+INCLUDEPATH      += ./3rdparty/qtcolorpicker/src
+INCLUDEPATH      += ../qwt/src
 
 ##################### Linux (Mac OS X) ######################################
 

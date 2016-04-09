@@ -8,13 +8,13 @@ QTI_ROOT = ..
 #############################################################################
 
 # configurable
-INCLUDEPATH       += $$ZLIB_INCLUDEPATH
-INCLUDEPATH       += $$MUPARSER_INCLUDEPATH
-INCLUDEPATH       += $$QWT_INCLUDEPATH
-INCLUDEPATH       += $$QWT3D_INCLUDEPATH
-INCLUDEPATH       += $$GSL_INCLUDEPATH
-INCLUDEPATH	  += /usr/include/QtAssistant/
-INCLUDEPATH	  += /usr/include/python2.7
+INCLUDEPATH  += $$ZLIB_INCLUDEPATH
+INCLUDEPATH  += $$MUPARSER_INCLUDEPATH
+INCLUDEPATH  += $$QWT_INCLUDEPATH
+INCLUDEPATH  += $$QWT3D_INCLUDEPATH
+INCLUDEPATH  += $$GSL_INCLUDEPATH
+INCLUDEPATH	 += /usr/include/QtAssistant/
+INCLUDEPATH	 += /usr/include/python2.7
 
 
 # configurable libs
@@ -22,16 +22,16 @@ LIBS         += $$MUPARSER_LIBS
 LIBS         += $$QWT_LIBS
 LIBS         += $$QWT3D_LIBS
 LIBS         += $$GSL_LIBS
-LIBS	     += -lz -lGLU
+LIBS         += -lz -lGLU
 
 #############################################################################
 ###################### BASIC PROJECT PROPERTIES #############################
 #############################################################################
 
-DEFINES       += SVN_REVISION="\"\\\"$$(QTIPLOT_SVN_REVISION)\\\"\""
+DEFINES      += SVN_REVISION="\"\\\"$$(QTIPLOT_SVN_REVISION)\\\"\""
 
 QMAKE_PROJECT_DEPTH = 0
-	
+
 !contains(CONFIG, BrowserPlugin){
 	TEMPLATE       = app
 }
@@ -90,30 +90,30 @@ RESOURCES     = ../manual/html/icons/icons.qrc
 
 ###################### TRANSLATIONS #########################################
 
-TRANSLATIONS    = translations/qtiplot_cn.ts \
-		  translations/qtiplot_cz.ts \
-		  translations/qtiplot_de.ts \
-		  translations/qtiplot_el.ts \
-		  translations/qtiplot_es.ts \
-		  translations/qtiplot_fr.ts \
-		  translations/qtiplot_it.ts \
-		  translations/qtiplot_pt.ts \
-		  translations/qtiplot_ro.ts \
-		  translations/qtiplot_ru.ts \
-		  translations/qtiplot_ja.ts \
-		  translations/qtiplot_sv.ts
+TRANSLATIONS = translations/qtiplot_cn.ts \
+            translations/qtiplot_cz.ts \
+            translations/qtiplot_de.ts \
+            translations/qtiplot_el.ts \
+            translations/qtiplot_es.ts \
+            translations/qtiplot_fr.ts \
+            translations/qtiplot_it.ts \
+            translations/qtiplot_pt.ts \
+            translations/qtiplot_ro.ts \
+            translations/qtiplot_ru.ts \
+            translations/qtiplot_ja.ts \
+            translations/qtiplot_sv.ts
 
 translations.files += translations/qtiplot_cn.qm \
-		translations/qtiplot_cz.qm \
-		translations/qtiplot_de.qm \
-		translations/qtiplot_es.qm \
-		translations/qtiplot_el.qm \
-		translations/qtiplot_fr.qm \
-		translations/qtiplot_pt.qm \
-		translations/qtiplot_ro.qm \
-		translations/qtiplot_ru.qm \
-		translations/qtiplot_ja.qm \
-		translations/qtiplot_sv.qm
+            translations/qtiplot_cz.qm \
+            translations/qtiplot_de.qm \
+            translations/qtiplot_es.qm \
+            translations/qtiplot_el.qm \
+            translations/qtiplot_fr.qm \
+            translations/qtiplot_pt.qm \
+            translations/qtiplot_ro.qm \
+            translations/qtiplot_ru.qm \
+            translations/qtiplot_ja.qm \
+            translations/qtiplot_sv.qm
 
 isEmpty(LUPDATE): LUPDATE = lupdate
 #system($$LUPDATE -verbose qtiplot.pro)
@@ -134,16 +134,15 @@ unix: man.files += ../qtiplot.1
 ##################### Compression (zlib-1.2.3) ################
 ###############################################################
 
-SOURCES += ../3rdparty/zlib/minigzip.c
 
 ###############################################################
 ################# Default Modules #############################
 ###############################################################
 
+include(../3rdparty/qti/libqti.pri)
 include(src/analysis/analysis.pri)
 include(src/core/core.pri)
 include(src/excel/excel.pri)
-include(src/lib/libqti.pri)
 include(src/plot2D/plot2D.pri)
 include(src/plot3D/plot3D.pri)
 include(src/matrix/matrix.pri)
@@ -241,6 +240,6 @@ contains(CONFIG, BrowserPlugin){
 
 TARGET		=	qtiplot
 DESTDIR		=	.
-LIBS		+=	../tmp/qtiplot/libFreeSoftwareQtiPlotImportOPJ.a
+LIBS	+=	../tmp/qtiplot/libFreeSoftwareQtiPlotImportOPJ.a
 
 include(src/plugins/OriginPlugin/OriginPlugin.pri)
