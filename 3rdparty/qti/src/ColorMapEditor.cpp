@@ -158,7 +158,7 @@ void ColorMapEditor::setColorMap(const LinearColorMap& map)
 	#ifdef Q_CC_MSVC
 		it->setFlags(it->flags() & (~Qt::ItemIsEditable));
 	#else
-		it->setFlags(!Qt::ItemIsEditable);
+		it->setFlags(it->flags() ^ Qt::ItemIsEditable);
 	#endif
 		it->setBackground(QBrush(c));
 		it->setForeground(QBrush(c));
@@ -249,7 +249,7 @@ void ColorMapEditor::insertLevel()
 #ifdef Q_CC_MSVC
 	it->setFlags(it->flags() & (~Qt::ItemIsEditable));
 #else
-	it->setFlags(!Qt::ItemIsEditable);
+	it->setFlags(it->flags() ^ Qt::ItemIsEditable);
 #endif
 	it->setBackground(QBrush(c));
 	it->setForeground(QBrush(c));

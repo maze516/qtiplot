@@ -1022,7 +1022,7 @@ void FitDialog::showFitPage()
 #ifdef Q_CC_MSVC
         it->setFlags(it->flags() & (~Qt::ItemIsEditable));
 #else
-        it->setFlags(!Qt::ItemIsEditable);
+        it->setFlags(it->flags() ^ Qt::ItemIsEditable);
 #endif
         it->setBackground(QBrush(Qt::lightGray));
         it->setForeground(Qt::black);
@@ -1049,7 +1049,7 @@ void FitDialog::showFitPage()
         boxParams->setCellWidget(i, 2, sb);
 
         it = new QTableWidgetItem();
-		it->setFlags(!Qt::ItemIsEditable);
+		it->setFlags(it->flags() ^ Qt::ItemIsEditable);
 		it->setText("--");
 		boxParams->setItem(i, 5, it);
 	}
@@ -1064,7 +1064,7 @@ void FitDialog::showFitPage()
 #ifdef Q_CC_MSVC
             it->setFlags(it->flags() & (~Qt::ItemIsEditable));
 #else
-            it->setFlags(!Qt::ItemIsEditable);
+            it->setFlags(it->flags() ^ Qt::ItemIsEditable);
 #endif
             it->setBackground(QBrush(Qt::lightGray));
             boxParams->setItem(i, 4, it);
